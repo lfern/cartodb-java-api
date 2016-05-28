@@ -32,6 +32,7 @@ public class TestImport {
     
     @Before
     public void setUp() {
+        Config.initialize();
     }
     
     @After
@@ -44,7 +45,7 @@ public class TestImport {
     // @Test
     // public void hello() {}
     boolean finish = false;
-    String apiKey = "7740768a8d071ab897c0d3b3f5f95b6ec01777ec";
+   
     String query = "INSERT INTO shapefile "+
             "(the_geom,comentaris,descgaleri,fecha,id,idactivita,idengros,idgaleria,idprincipa,idsector,nomlocal) "+
             "select "+
@@ -164,20 +165,20 @@ public class TestImport {
 */
     @Test
     public void importFile2() throws IOException, Exception{
-        CartoDbImportService service = new CartoDbImportService("lfern", apiKey, true);
+        CartoDbImportService service = new CartoDbImportService(Config.USER, Config.APIURL, true);
         
         File file = new File("src/test/resources/shapefile.zip");
         CbImportResponse importResponse = service.importFile(file);
         
         CbImportStatus statusResponse = service.importStatus(importResponse.item_queue_id, 120);
         
-        CartoDbSqlService queryService = new CartoDbSqlService("lfern", apiKey,true);
+        CartoDbSqlService queryService = new CartoDbSqlService(Config.USER, Config.APIURL,true);
         
         CbSqlResponse sqlResponse = queryService.executeQuery(query.replace("%table%",statusResponse.table_name));
         
         //System.out.println(sqlResponse);
         
     }
-    //https://lfern.cartodb.com/tables/shapefile/public/map
+    //https://.cartodb.com/tables/shapefile/public/map
     
 }
