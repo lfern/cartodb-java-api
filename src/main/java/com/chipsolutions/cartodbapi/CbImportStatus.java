@@ -10,25 +10,25 @@ package com.chipsolutions.cartodbapi;
  * @author luis
  */
 public class CbImportStatus {
-    String id;
-    String user_id;
-    String table_id;
-    String data_type;//	file, url, external_table, query, table or datasource.
-    String table_name; 
-    String state;// enqueued, pending, uploading, unpacking, importing, guessing, complete, or failure.
-    String error_code;//
-    String queue_id;
-    String tables_created_count;
-    String synchronization_id;
-    boolean type_guessing;
-    boolean quoted_fields_guessing;
-    boolean content_guessing;
-    boolean create_visualization;
-    String visualization_id;
-    String user_defined_limits;
-    String get_error_text;
-    String display_name;
-    boolean success;
-    String warnings;
-    boolean is_raster;
+    public String id;
+    public String user_id;
+    public String table_id;
+    public String data_type;//	file, url, external_table, query, table or datasource.
+    public String table_name; 
+    public String state;// enqueued, pending, uploading, unpacking, importing, guessing, complete, or failure.
+    public String error_code;//
+    public String queue_id;
+    public String tables_created_count;
+    public String synchronization_id;
+    public boolean type_guessing;
+    public boolean quoted_fields_guessing;
+    public boolean content_guessing;
+    public boolean create_visualization;
+    public String visualization_id;
+    public String user_defined_limits;
+    public String get_error_text;
+    public String display_name;
+    public boolean success;
+    public String warnings;
+    public boolean is_raster;
 }
