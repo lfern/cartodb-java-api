@@ -26,7 +26,7 @@ public class CbImportStatus {
     public boolean create_visualization;
     public String visualization_id;
     public String user_defined_limits;
-    public String get_error_text;
+    public CbErrorText get_error_text;
     public String display_name;
     public boolean success;
     public String warnings;
